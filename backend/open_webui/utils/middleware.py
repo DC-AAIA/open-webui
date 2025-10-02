@@ -2113,11 +2113,7 @@ async def process_chat_response(
                                                         ]["name"] += delta_name
 
                                                     if delta_arguments:
-                                                        current_response_tool_call[
-                                                            "function"
-                                                        ][
-                                                            "arguments"
-                                                        ] += delta_arguments
+                                                        current_response_tool_call["function"]["arguments"] = current_response_tool_call["function"].get("arguments", "") + delta_arguments
 
                                     value = delta.get("content")
 
